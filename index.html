@@ -1,31 +1,51 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f6f1e6"><meta name="description" content="一本隨身帶著走的京都秋日旅行手帳。前四天的賞楓、天橋立與伊根行程，附交通時間軸、景點照片、地圖與行前清單。"><title>京都秋日｜我的紅葉旅行手帳</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f6f1e6">
+<meta name="description" content="2026 年 12 月 1 日至 8 日京都、天橋立、伊根與神戶八日秋日旅行手帳：夜楓、交通、餐食、住宿與地圖。">
+<title>京都秋日｜八日紅葉旅行手帳</title>
 <link rel="stylesheet" href="guide.css"><script src="itinerary.js" defer></script><script src="guide.js" defer></script>
 </head>
 <body>
-<a class="skip-link" href="#journey">跳到每日行程</a>
+<a class="skip-link" href="#journey">跳至每日行程</a>
 <header class="site-header">
-<a class="brand" href="#"><span class="brand-seal" aria-hidden="true">京</span><span>京都秋日<small>OUR LITTLE TRAVEL JOURNAL</small></span></a>
-<nav aria-label="主要導覽"><a href="#overview">旅程目錄</a><a href="#journey">每日行程</a><a href="#checklist">行前準備</a></nav>
-<button class="print-button" id="print-guide" type="button">列印手帳 ↗</button>
+  <a class="brand" href="#"><span class="brand-seal" aria-hidden="true">京</span><span>京都秋日<small>OUR LITTLE TRAVEL JOURNAL</small></span></a>
+  <nav aria-label="主要導覽"><a href="#overview">八日篇章</a><a href="#night-maple">夜楓指南</a><a href="#journey">每日行程</a><a href="#checklist">出發準備</a></nav>
+  <button class="print-button" id="print-guide" type="button">列印手帳 ↗</button>
 </header>
 <main>
 <section class="cover" aria-labelledby="cover-title">
-<div class="cover-copy"><p class="eyebrow"><span></span> JAPAN · KYOTO · AUTUMN</p><p class="handwritten">そうだ、京都へ行こう。</p><h1 id="cover-title">把秋天，<br>寫進<span>京都</span>裡。</h1><p class="cover-description">一場紅葉、海風與小巷的旅行。<br>帶著這本小手帳，慢慢走進喜歡的風景。</p><a class="primary-link" href="#journey">翻開我的旅行手帳 <span>↓</span></a><div class="cover-meta"><span>DECEMBER <b>12.01 起</b></span><span>TRAVEL NOTES <b>前 4 天已規劃</b></span></div></div>
-<div class="cover-art"><span class="tape tape-top" aria-hidden="true"></span><img src="assets/kyoto-autumn-illustration.png" alt="手繪京都秋日風景：鳥居、寺院、紅楓與伊根舟屋" width="1536" height="1024" fetchpriority="high"><span class="vertical-caption" lang="ja">紅葉と、旅の記憶。</span><span class="travel-stamp" aria-hidden="true">京都<br><small>秋の旅</small></span><span class="art-caption">a little journey, a lot of memories.</span></div>
-<div class="cover-bottom"><span>KYOTO & THE SEA OF KYOTO</span><span>紅葉狩り · 海の京都 · 庭園散歩</span><span>旅のしおり / 01</span></div>
+  <div class="cover-copy"><p class="eyebrow"><span></span> JAPAN · KYOTO · KOBE · AUTUMN</p><p class="handwritten">從紅葉到海風，一起收藏十二月。</p>
+    <h1 id="cover-title">八天慢慢走<br>秋色<span>京都</span>與神戶</h1>
+    <p class="cover-description">岡崎的夜楓、天橋立的海、嵐山的溪谷，<br>再把旅程帶到神戶的港邊與餐桌。</p>
+    <a class="primary-link" href="#journey">翻開八日行程 <span>↗</span></a>
+    <div class="cover-meta"><span>TRAVEL DATES <b>2026.12.01—12.08</b></span><span>TRAVEL NOTES <b>八日完整規劃</b></span></div>
+  </div>
+  <div class="cover-art"><span class="tape tape-top" aria-hidden="true"></span><img src="assets/kyoto-autumn-illustration.png" alt="京都紅葉、寺院與天橋立海景的旅行插畫" width="1536" height="1024" fetchpriority="high"><span class="vertical-caption" lang="ja">秋の京都、海の京都</span><span class="travel-stamp" aria-hidden="true">京都<br><small>秋日旅</small></span><span class="art-caption">a little journey, a lot of memories.</span></div>
+  <div class="cover-bottom"><span>KYOTO · AMANOHASHIDATE · INE · KOBE</span><span>紅葉與海風 · 八天七夜</span><span>TRAVEL JOURNAL / 01</span></div>
 </section>
-<section id="overview" class="overview"><div class="section-heading"><div><p class="eyebrow">THE CHAPTERS</p><h2>這次，我們這樣玩<span>旅程目錄</span></h2></div><p>從洛東的楓紅，走到海邊的日常。</p></div><div id="chapter-list" class="chapter-list"></div><p class="draft-note">手帳進度｜12/1–12/4 已排入你的行程。第 5–8 天保留原草稿；旅行年份待確認。</p></section>
-<section id="journey" class="journey"><div class="section-heading"><div><p class="eyebrow">DAY BY DAY</p><h2>每日的風景與小事<span>一日一頁</span></h2></div><span class="tiny-flower" aria-hidden="true">✿</span></div><div id="tabs" class="tabs" role="tablist" aria-label="選擇旅遊天數"></div><article id="panel" class="journal-page" role="tabpanel" tabindex="0"></article><div class="page-controls"><button id="previous-day" type="button">← 前一天</button><span id="page-position" aria-live="polite"></span><button id="next-day" type="button">下一天 →</button></div></section>
+<section id="overview" class="overview"><div class="section-heading"><div><p class="eyebrow">THE CHAPTERS</p><h2>這八天，翻成<span>旅行篇章</span></h2></div><p>點選照片，打開當天的路線與筆記。</p></div><div id="chapter-list" class="chapter-list"></div><p class="draft-note">2026 年 12/1 是星期二。時間、餐廳與估價供規劃使用；訂位、班次及營業日請以出發前官方公告為準。</p></section>
+<section id="night-maple" class="night-maple"><div class="section-heading"><div><p class="eyebrow">AFTER DARK</p><h2>京都夜楓<span>點燈小誌</span></h2></div><p>以 2026 年公布資訊整理，點燈日仍可能調整。</p></div>
+  <div class="night-grid">
+    <article class="night-card featured"><span class="night-status">DAY 01 · 已排入</span><h3>永觀堂</h3><p>11/20—12/6 · 17:30—21:00<br>20:30 停止入場 · 成人 ¥1,000</p><a href="https://ja.kyoto.travel/event/single.php?event_id=5019" target="_blank" rel="noopener noreferrer">查 2026 官方資訊 ↗</a></article>
+    <article class="night-card"><span class="night-status">備選</span><h3>北野天滿宮</h3><p>11/7—12/6 · 日落後點燈<br>開苑至 20:00 · 成人 ¥1,500（含茶點）</p><a href="https://ja.kyoto.travel/times/night/article/single.php?id=454" target="_blank" rel="noopener noreferrer">查 2026 官方資訊 ↗</a></article>
+    <article class="night-card"><span class="night-status">未排入</span><h3>東寺</h3><p>10/31—12/13 · 18:00—21:30<br>21:00 停止入場 · 成人 ¥1,000</p><a href="https://ja.kyoto.travel/event/single.php?event_id=5098" target="_blank" rel="noopener noreferrer">查 2026 官方資訊 ↗</a></article>
+    <article class="night-card"><span class="night-status">12/1 已結束</span><h3>清水寺夜間拜觀</h3><p>11/21—11/30 · 17:30 開始<br>21:00 停止入場 · 12/6 改作清晨參拜</p><a href="https://ja.kyoto.travel/event/single.php?event_id=3730" target="_blank" rel="noopener noreferrer">查 2026 官方資訊 ↗</a></article>
+  </div>
+</section>
+<section id="journey" class="journey"><div class="section-heading"><div><p class="eyebrow">DAY BY DAY</p><h2>每天一頁的<span>旅途手帳</span></h2></div><span class="tiny-flower" aria-hidden="true">❀</span></div><div id="tabs" class="tabs" role="tablist" aria-label="選擇旅行日期"></div><article id="panel" class="journal-page" role="tabpanel" tabindex="0"></article><div class="page-controls"><button id="previous-day" type="button">← 前一天</button><span id="page-position" aria-live="polite"></span><button id="next-day" type="button">後一天 →</button></div></section>
 <section id="checklist" class="practical">
-<article class="info planning-info"><p class="eyebrow">STAY & MOVE</p><h2>旅行前的小功課</h2><p>把重要的事先準備好，到了京都就專心看風景。</p><dl><dt><span aria-hidden="true">⌂</span> 住宿基地</dt><dd>暫以京都車站附近為起點，飯店名稱與地址待填。</dd><dt><span aria-hidden="true">↔</span> 交通與票券</dt><dd>市區依行程搭乘 JR、地鐵、私鐵或巴士。海之京都日另評估周遊券與特急車票。</dd><dt><span aria-hidden="true">◷</span> 出發前再確認</dt><dd>旅行年份、日期星期、交通班次、寺院拜觀與夜楓時間，以當年度公告為準。</dd></dl><a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Kyoto+Station" target="_blank" rel="noopener noreferrer">京都車站地圖 ↗</a><span class="info-decoration" aria-hidden="true">旅</span></article>
-<article class="info checklist-info"><span class="tape" aria-hidden="true"></span><p class="eyebrow">PACK A LITTLE HAPPINESS</p><h2>出發清單 <span aria-hidden="true">✓</span></h2><div id="packing-list"></div><p class="small">勾選會保存在這台裝置的瀏覽器。</p><p id="storage-message" class="small" role="status"></p></article>
+  <article class="info planning-info"><p class="eyebrow">STAY & MOVE</p><h2>住宿與交通備忘</h2><p>三段住宿，搭配鐵道、巴士與後段自駕。</p><dl>
+    <dt><span aria-hidden="true">⌂</span> 12/1—12/3 · 京都五条</dt><dd>THE POCKET HOTEL 京都烏丸五条；地鐵五条站 1 號出口步行約 1 分鐘。請勿與已暫停營業的京都四条烏丸分館混淆。</dd>
+    <dt><span aria-hidden="true">⌂</span> 12/4—12/5 · 京都南側</dt><dd>京蘭 無幻邸；確切棟別、地址、寄物與停車依訂房確認書。</dd>
+    <dt><span aria-hidden="true">⌂</span> 12/6—12/7 · 神戶三宮</dt><dd>remm Plus Kobe Sannomiya；事先確認過夜停車與車高限制。</dd>
+    <dt><span aria-hidden="true">↗</span> 12/5—12/8 · 租車</dt><dd>先確認京都取車、神戶機場還車可行性與異地還車費；高速、停車和油費另計。</dd>
+  </dl><a class="text-link" href="https://sotetsu-hotels.com/pocket-hotel/karasumagojo/access/" target="_blank" rel="noopener noreferrer">查看烏丸五条飯店官方交通 ↗</a><span class="info-decoration" aria-hidden="true">楓</span></article>
+  <article class="info checklist-info"><span class="tape" aria-hidden="true"></span><p class="eyebrow">PACK A LITTLE HAPPINESS</p><h2>出發前清單 <span aria-hidden="true">✓</span></h2><div id="packing-list"></div><p class="small">勾選狀態與每日筆記儲存在此瀏覽器。</p><p id="storage-message" class="small" role="status"></p></article>
 </section>
-<section class="closing"><span lang="ja">また、京都で。</span><h2>讓行程有方向，也讓旅行有留白。</h2><p>遇見一片好看的楓葉，就多停一下。<br>走累了，就用一杯熱茶，把今天慢慢收好。</p><a href="https://kyoto.travel/en/seasonal-info/autumnleaves" target="_blank" rel="noopener noreferrer">京都官方賞楓資訊 ↗</a></section>
-<details class="credits"><summary>手帳靈感與影像來源</summary><p>版面靈感：<a href="https://sharon06252019.pixnet.net/blog/posts/17345832435" target="_blank" rel="noopener noreferrer">Sharon 的京阪神旅遊手冊分享</a>。本網站使用原創排版與 AI 生成京都插畫；插畫為旅行意象，非地理導航圖。景點照片為不同時期拍攝，非即時楓況。</p><div id="photo-credits"></div></details>
-<noscript><p>請啟用 JavaScript 查看每日行程與互動清單。</p></noscript>
+<section class="closing"><span lang="ja">また、京都で。</span><h2>把紅葉、海風與港都的夜色帶回家。</h2><p>每天留一點空白，讓驚喜也能走進行程。</p><a href="https://ja.kyoto.travel/" target="_blank" rel="noopener noreferrer">京都市官方觀光資訊 ↗</a></section>
+<details class="credits"><summary>圖片授權與資料說明</summary><p>版型參考 <a href="https://sharon06252019.pixnet.net/blog/posts/17345832435" target="_blank" rel="noopener noreferrer">Sharon 的旅行文章</a>，本頁文字與編排重新製作。封面使用 AI 生成插畫；每日景點照片出自 Wikimedia Commons，作者及授權如下。車資、餐費與計程車金額為估算，非官方報價。</p><div id="photo-credits"></div></details>
+<noscript><p>請啟用 JavaScript 以閱讀每日行程。</p></noscript>
 </main>
-<footer><a class="brand" href="#">京都秋日 <small>A JOURNAL TO KEEP</small></a><span>12/1–12/4 已更新 · 第五至八天待調整</span><a href="#">回到封面 ↑</a></footer>
+<footer><a class="brand" href="#">京都秋日 <small>A JOURNAL TO KEEP</small></a><span>2026.12.01—12.08 · 八日旅行計畫</span><a href="#">回到頁首 ↑</a></footer>
 </body></html>

@@ -3,7 +3,11 @@ const assets = [
   ['heian', '平安神宮 01.JPG'],
   ['amanohashidate', 'Amanohashidate 20211008160710 (51811911021).jpg'],
   ['tofukuji', 'Tofukuji Kyoto01bs3200.jpg'],
-  ['gyoen', 'Various autumn trees at Kyoto Gyoen National Garden in Kyoto, Japan (2019) - 116.jpg']
+  ['gyoen', 'Various autumn trees at Kyoto Gyoen National Garden in Kyoto, Japan (2019) - 116.jpg'],
+  ['arashiyama', 'Togetsu bridge and Arashiyama hills under the rain (Kyoto, Japan) (3262583370).jpg'],
+  ['kiyomizu', 'Kiyomizudera autumn.jpg'],
+  ['katsuoji', 'Katsuo-ji daruma.jpg'],
+  ['suma', 'Kobe Suma Sea World 5.jpg']
 ];
 const credits=[];
 for (const [id,title] of assets) {
