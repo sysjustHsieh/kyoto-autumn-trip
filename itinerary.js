@@ -22,12 +22,12 @@ const days = [
       ['08:38–10:39・現行班表','特急 Hashidate 1','五条搭烏丸線到京都站，預留進站與指定席購票時間。','京都站'],
       ['10:50–13:00','天橋立 View Land 與午餐','上山看飛龍觀；纜車／吊椅往返含入園成人現行 ¥1,000。時間充裕再走沙洲；站前安排午餐。','天橋立 View Land'],
       ['13:00 後・依班表','丹後巴士前往伊根','從天橋立站前搭往伊根方向巴士。班次較疏，先確認可銜接回程特急的車次。','天橋立駅前 バス停'],
-      ['約 14:00–16:30','伊根舟屋與遊覽船','乘船約 25 分鐘欣賞舟屋，成人票現行 ¥1,200；再沿海散步或進海景咖啡廳，船班受天候影響。','伊根湾めぐり遊覧船'],
+      ['約 14:00–16:30','伊根舟屋與遊覽船','乘船約 25 分鐘欣賞舟屋，成人票現行 ¥1,200；再沿海散步。INE CAFE 週三只提供外帶飲料與冰淇淋，船班受天候影響。','伊根湾めぐり遊覧船'],
       ['18:09–20:21・現行班表','特急 Hashidate 8 返回京都','回程巴士要預留到站與轉乘緩衝；時刻以乘車日公告為準。','天橋立駅']
     ],
     transport:['五条 → 京都站：烏丸線約 2 分。','JR 關西廣域周遊券／丹後周遊券是否划算，需按適用區間與當日票價比較；巴士可能另計。','天橋立 ↔ 伊根：巴士單程約 55 分，請事先儲存來回班次。'],
-    food:['午餐：天橋立站周邊海鮮丼，粗估 ¥1,800–2,500。','下午茶候選：INE CAFE，需留意排隊與營業日。','伴手禮：智惠之餅，注意保存期限。'],
-    source:[['JR 時刻','https://timetable.jr-odekake.net/'],['丹後巴士','https://www.tankai.jp/'],['View Land 票價','https://www.viewland.jp/'],['伊根觀光船','https://www.inewan.com/']]
+    food:['午餐：天橋立站周邊海鮮丼，粗估 ¥1,800–2,500。','INE CAFE：週三 10:00–16:00 僅外帶飲料、冰淇淋；如想坐下吃蛋糕，需另選店家。','伴手禮：智惠之餅，注意保存期限。'],
+    source:[['JR 時刻','https://timetable.jr-odekake.net/'],['丹後巴士','https://www.tankai.jp/'],['View Land 票價','https://www.viewland.jp/'],['伊根觀光船','https://www.inewan.com/'],['INE CAFE 週三資訊','https://www.ine-kankou.jp/taste/ine-cafe']]
   },
   {
     date:'12/3（四）',title:'東福寺紅葉・鴨川與一乘寺庭園',area:'洛南 → 出町柳 → 洛北',short:'東福寺・一乘寺',stay:'THE POCKET HOTEL 京都烏丸五条',
@@ -83,7 +83,7 @@ const days = [
     ],
     transport:['京都市區停車位少，費率依現場公告。','京都 → 神戶車程粗估 1.5–2.5 小時，ETC 過路費依車型與路線。','神戶飯店停車須先確認車高與合作停車場。'],
     food:['三嶋亭壽喜燒午餐候選，粗估 ¥8,000–12,000／人。','甜點候選：然花抄院。','伴手禮：御金神社御守、銀杏繪馬。'],
-    source:[['清水寺','https://www.kiyomizudera.or.jp/'],['御金神社','https://mikane-jinja.or.jp/']]
+    source:[['清水寺','https://www.kiyomizudera.or.jp/'],['御金神社','https://mikane-jinja.or.jp/'],['三嶋亭本店','https://www.mishima-tei.co.jp/access/'],['然花抄院','https://zen-kashoin.com/muromachistore/zencafe/access/']]
   },
   {
     date:'12/7（一）',title:'勝尾寺祈福・神戶牛與夜景',area:'神戶 → 大阪箕面 → 神戶',short:'勝尾寺・神戶牛',stay:'remm Plus Kobe Sannomiya',
