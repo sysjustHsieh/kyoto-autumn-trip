@@ -1,6 +1,6 @@
 # 京都秋日｜八日紅葉旅行手帳
 
-專案接續紀錄，更新於 **2026-10-21**。網站：[https://zex00591-lab.github.io/kyoto-autumn-trip/](https://zex00591-lab.github.io/kyoto-autumn-trip/)。原始碼：`https://github.com/zex00591-lab/kyoto-autumn-trip`。目前是直接由 GitHub Pages 發布的靜態網站，沒有安裝或建置步驟。
+專案接續紀錄，更新於 **2026-10-22**。網站：[https://zex00591-lab.github.io/kyoto-autumn-trip/](https://zex00591-lab.github.io/kyoto-autumn-trip/)。原始碼：`https://github.com/zex00591-lab/kyoto-autumn-trip`。目前是直接由 GitHub Pages 發布的靜態網站，沒有安裝或建置步驟。
 
 ## 目前內容
 
@@ -27,10 +27,10 @@
 
 版面順序：封面 → 八日篇章卡 → 夜楓指南 → 每日手帳 → 住宿／出發準備。每日手帳由分頁切換，包含日期、住宿、`TODAY’S ROUTE / 今日動線`、當日停留點、照片、提醒、交通與餐食卡。手機上的今日動線已改為分列卡片，避免被截斷；日期分頁仍可水平捲動。
 
-目前有兩張**原創 SVG 手繪示意地圖**，都保留與旅行手帳一致的紙感、手繪線條和小插圖：
+目前有四張**原創 SVG 手繪示意地圖**。依使用者提供的手繪街區地圖參考，改用不規則的街道、淺橘色路網、紙張形狀、建築與點心小插圖、街名與編號地點。範圍大時拆成較小區域，避免景點擠在同一張：
 
-- Day 2：`assets/day2-sea-sketch.svg`，畫出天橋立 View Land、智惠之餅、伊根遊覽船、INE CAFE。
-- Day 6：`assets/day6-kyoto-sketch.svg`，畫出清水寺、御金神社、三嶋亭本店、然花抄院，以及寺院、鳥居、壽喜燒、甜點插圖。
+- Day 2：`assets/day2-amanohashidate-town.svg`（天橋立站、View Land、智恩寺、智惠之餅）與 `assets/day2-ine-harbor.svg`（伊根遊覽船、舟屋、INE CAFE）。
+- Day 6：`assets/day6-kiyomizu-lanes.svg`（清水寺、二年坂、三年坂、茶屋街景）與 `assets/day6-central-kyoto.svg`（御金神社、然花抄院、三嶋亭本店）。
 
 地圖只表達區域關係，**並非按比例的導航圖**。旁邊有文字圖例、各地點的 Google 地圖連結和放大原圖連結；手機改為上下排列，列印版也包含手繪圖。12/2 是星期三；依[伊根觀光協會的 INE CAFE 資訊](https://www.ine-kankou.jp/taste/ine-cafe)，當天只供外帶飲料與冰淇淋，網站已修正原本「坐在咖啡廳吃蛋糕」的建議。
 
@@ -45,12 +45,12 @@
 | `assets/` | 封面插畫、景點照片與兩張 SVG 手繪地圖 |
 | `scripts/fetch-assets.mjs` | 原有景點照片素材擷取腳本；一般文案更新不必執行 |
 
-此網站沒有套件依賴。可在專案目錄以 `python -m http.server 8765 --bind 127.0.0.1` 預覽，再開 `http://127.0.0.1:8765/`。修改 JS 後可用 `node --check itinerary.js`、`node --check guide.js` 確認語法；地圖 SVG 可用 XML parser 驗證。發布方式是提交並推送 `main` 到 `origin`，等待 GitHub Pages 更新，再查公開網站及新增素材是否正常載入。最近一次網站功能提交為 `03edc24`（兩張手繪地圖）；這份文件會在其後另行提交。
+此網站沒有套件依賴。可在專案目錄以 `python -m http.server 8765 --bind 127.0.0.1` 預覽，再開 `http://127.0.0.1:8765/`。修改 JS 後可用 `node --check itinerary.js`、`node --check guide.js` 確認語法；地圖 SVG 可用 XML parser 驗證。發布方式是提交並推送 `main` 到 `origin`，等待 GitHub Pages 更新，再查公開網站及新增素材是否正常載入。
 
 ## 下次接續時注意
 
 - 維持上述手帳式視覺與繁體中文內容；新增圖片、地圖或插圖時，先檢查手機 320px、390px 和桌面寬度，避免橫向溢出或文字裁切。
-- 目前 Day 2 和 Day 6 有手繪示意地圖；若要擴充其他天數，延續同一紙張、配色、插畫與可點選地點圖例的做法。地圖的實際動線仍須用導航連結核對。
+- 目前 Day 2 和 Day 6 各有兩張街區手繪示意地圖；若要擴充其他天數，延續同一紙張、配色、不規則街道、插畫與可點選地點圖例。範圍太大就拆圖，地圖的實際動線仍須用導航連結核對。
 - 核對 BR132／BR175 電子機票、12 月 JR Hashidate 與丹後巴士班次、遊船及小火車運行、景點秋季預約和夜間開放、餐廳營業／訂位、租車異地還車及各住宿地址。網站現行列車時刻是規劃用，不能視為旅行日保證班次。
 - 「THE POCKET HOTEL 京都四條烏丸」先前查得暫停營業；使用者已指定網站改寫為 **THE POCKET HOTEL 京都烏丸五条**。不要把兩間分館混淆。
 - 若資料查核後要更動餐食或交通，連同 `itinerary.js` 的查核來源、地圖圖例或 `index.html` 的固定資訊一起更新，避免同頁互相矛盾。

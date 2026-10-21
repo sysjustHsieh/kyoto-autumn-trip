@@ -14,25 +14,30 @@ function external(label,url,cls=''){const a=el('a',cls,label);a.href=url;a.targe
 function mapLink(label,query){return external(label+' ↗','https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(query),'map');}
 function detailCard(title,items,cls){const card=el('section','detail-card '+cls);card.append(el('h4','',title));const list=el('ul');items.forEach(item=>list.append(el('li','',item)));card.append(list);return card;}
 const illustratedMaps={
-  1:{src:'assets/day2-sea-sketch.svg',title:'海之京都・手繪散策地圖',alt:'天橋立與伊根灣手繪示意地圖，畫出 View Land、智惠之餅、伊根灣遊覽船及 INE CAFE 的相對位置。',places:[
-    ['天橋立 View Land','天橋立 View Land','飛龍觀與沙洲'],
-    ['智惠之餅','智恩寺 勘七茶屋','天橋立名物甜點'],
-    ['伊根灣遊覽船','伊根湾めぐり遊覧船','從海上看舟屋'],
-    ['INE CAFE','INE CAFE 伊根','週三只供外帶飲料與冰淇淋']
-  ],note:'手繪位置為示意；遊覽船碼頭至 INE CAFE 步行約 25 分鐘，搭車與步行時間請依實際路線安排。'},
-  5:{src:'assets/day6-kyoto-sketch.svg',title:'清水寺與京都美食・手繪散策地圖',alt:'京都市區手繪示意地圖，標出清水寺、御金神社、三嶋亭本店與然花抄院，並畫有寺院、鳥居、壽喜燒及甜點插圖。',places:[
-    ['清水寺','清水寺 京都','清晨參拜'],
-    ['御金神社','御金神社 京都','金色鳥居'],
-    ['三嶋亭本店','三嶋亭 本店 京都','壽喜燒午餐候選'],
-    ['然花抄院','然花抄院 室町本店 京都','甜點候選']
-  ],note:'手繪位置為示意，景點與餐廳間請使用下方連結查詢實際路線。'}
+  1:[
+    {src:'assets/day2-amanohashidate-town.svg',title:'天橋立・站前散步地圖',alt:'天橋立站前手繪街道圖，以插畫標出車站、View Land、智恩寺和智惠之餅。',places:[
+      ['天橋立站','天橋立駅','抵達與轉乘'],['View Land','天橋立 View Land','吊椅上山看飛龍觀'],['智恩寺','智恩寺 天橋立','沙洲入口旁的寺院'],['智惠之餅','智恩寺 勘七茶屋','當地名物甜點']
+    ],note:'站前小區域的手繪示意，步行時間請以實際導航為準。'},
+    {src:'assets/day2-ine-harbor.svg',title:'伊根灣・舟屋與海風地圖',alt:'伊根灣手繪海岸圖，標出遊覽船碼頭、舟屋街景及 INE CAFE。',places:[
+      ['伊根灣遊覽船','伊根湾めぐり遊覧船','乘船約 25 分鐘'],['舟屋街景','伊根舟屋','沿岸散步'],['INE CAFE','INE CAFE 伊根','週三僅外帶飲料與冰淇淋']
+    ],note:'遊覽船碼頭至 INE CAFE 步行約 25 分鐘；留意 16:00 結束營業與回程巴士。'}
+  ],
+  5:[
+    {src:'assets/day6-kiyomizu-lanes.svg',title:'清水寺・東山坂道地圖',alt:'清水寺周邊手繪街道圖，畫出清水寺、清水坂、二年坂、三年坂和茶屋點心。',places:[
+      ['清水寺','清水寺 京都','清晨參拜'],['二年坂','二年坂 京都','石板路與町家街景'],['三年坂','三年坂 京都','坂道散步'],['茶屋點心','清水坂 京都','沿途街景插畫，非指定店家']
+    ],note:'清水寺一帶為坡道；茶屋點心圖只代表街景，請按當日營業店家選擇。'},
+    {src:'assets/day6-central-kyoto.svg',title:'京都市中心・神社與美食地圖',alt:'京都市中心手繪街道圖，以鳥居、店舖、甜點和壽喜燒插畫標出御金神社、然花抄院及三嶋亭本店。',places:[
+      ['御金神社','御金神社 京都','金色鳥居'],['然花抄院','然花抄院 室町本店 京都','甜點候選'],['三嶋亭本店','三嶋亭 本店 京都','壽喜燒午餐候選']
+    ],note:'市中心小區域的手繪示意，店家營業與訂位請出發前核對。'}
+  ]
 };
 function illustratedMap(config,printable){
   const section=el('section','illustrated-map'),heading=el('div','sketch-heading');
   heading.append(el('p','mini-label','SKETCH MAP / 手繪地圖'),el('h4','',config.title));section.append(heading);
-  const layout=el('div','illustrated-map-layout'),figure=el('figure','sketch-paper'),img=el('img');
-  img.src=config.src;img.alt=config.alt;img.loading=printable?'eager':'lazy';img.width=600;img.height=700;
-  figure.append(img,el('figcaption','','旅途中值得停留的風景與味道'));
+  const layout=el('div','illustrated-map-layout'),figure=el('figure','sketch-paper'),img=el('img'),enlarge=external('',config.src,'sketch-image-link');
+  enlarge.setAttribute('aria-label','放大手繪地圖：'+config.title);
+  img.src=config.src;img.alt=config.alt;img.loading=printable?'eager':'lazy';img.width=640;img.height=720;
+  enlarge.append(img);figure.append(enlarge,el('figcaption','','旅途中值得停留的風景與味道'));
   const legend=el('div','sketch-legend');legend.append(el('p','sketch-intro','沿著地圖尋找景點、餐廳與甜點。點開地點可查看實際位置。'));
   const list=el('ol','sketch-places');config.places.forEach(([name,query,description])=>{const item=el('li');const copy=el('span');copy.append(el('strong','',name),el('small','',description));item.append(copy,mapLink('查看地圖',query));list.append(item);});legend.append(list);
   legend.append(el('p','sketch-caveat',config.note));if(!printable)legend.append(external('放大手繪圖 ↗',config.src,'sketch-zoom'));
@@ -45,7 +50,7 @@ function journalPage(i,printable=false){
   const stamp=el('span','date-stamp',day.date);stamp.append(el('small','','2026 KYOTO JOURNAL'));header.append(stamp);page.append(header);
   const lodging=el('p','stay-line','⌂ 住宿｜'+day.stay);page.append(lodging);
   const route=el('div','route-section');route.append(el('p','mini-label','TODAY’S ROUTE / 今日動線'));const steps=el('ol','route-line');day.route.forEach(s=>steps.append(el('li','',s)));route.append(steps);page.append(route);
-  if(illustratedMaps[i])page.append(illustratedMap(illustratedMaps[i],printable));
+  if(illustratedMaps[i])illustratedMaps[i].forEach(config=>page.append(illustratedMap(config,printable)));
   const columns=el('div','journal-columns'),timeline=el('div','timeline');
   day.stops.forEach((stop,n)=>{const [time,name,description,query]=stop,card=el('section','stop'+(/交通|巴士|特急|HARUKA|取行李|還車|自駕|租車/.test(name)?' transit':''));card.append(el('span','stop-number',String(n+1)));const content=el('div','stop-content');content.append(el('div','time',time),el('h4','',name),el('p','',description));const links=el('div','map-links');links.append(mapLink('查看地圖',query));content.append(links);card.append(content);timeline.append(card);});columns.append(timeline);
   const side=el('aside','scrapbook'),photo=el('figure','photo-frame'),img=el('img');img.src='assets/'+chapter.image;img.alt=chapter.alt;img.loading=printable?'eager':'lazy';photo.append(img,el('figcaption','',chapter.caption));side.append(photo);
