@@ -22,6 +22,11 @@ const illustratedMaps={
       ['伊根灣遊覽船','伊根湾めぐり遊覧船','乘船約 25 分鐘'],['舟屋街景','伊根舟屋','沿岸散步'],['INE CAFE','INE CAFE 伊根','週三僅外帶飲料與冰淇淋']
     ],note:'遊覽船碼頭至 INE CAFE 步行約 25 分鐘；留意 16:00 結束營業與回程巴士。'}
   ],
+  4:[
+    {src:'assets/day5-arashiyama.svg',title:'嵐山・小火車與保津川',alt:'紅黑色嵯峨野小火車穿過秋日山谷，木造長舟沿保津川而下，渡月橋橫跨河面；附行程能量雷達圖和三則提醒。',places:[
+      ['嵐山小火車','トロッコ嵯峨駅','紅葉車窗與山谷'],['保津川遊船','保津川下り 乗船場','木舟賞峽谷'],['渡月橋','渡月橋 京都','嵐山代表景色']
+    ],note:'車次、船班與乘船碼頭請依預約資訊與當日天候核對。'}
+  ],
   5:[
     {src:'assets/day6-kiyomizu-lanes.svg',title:'清水寺・東山坂道地圖',alt:'清水寺周邊手繪街道圖，畫出清水寺、清水坂、二年坂、三年坂和茶屋點心。',places:[
       ['清水寺','清水寺 京都','清晨參拜'],['二年坂','二年坂 京都','石板路與町家街景'],['三年坂','三年坂 京都','坂道散步'],['茶屋點心','清水坂 京都','沿途街景插畫，非指定店家']
@@ -33,14 +38,15 @@ const illustratedMaps={
 };
 function illustratedMap(config,printable){
   const section=el('section','illustrated-map'),heading=el('div','sketch-heading');
-  heading.append(el('p','mini-label','SKETCH MAP / 手繪地圖'),el('h4','',config.title));section.append(heading);
-  const layout=el('div','illustrated-map-layout'),figure=el('figure','sketch-paper'),img=el('img'),enlarge=external('',config.src,'sketch-image-link');
+  heading.append(el('p','mini-label','手繪旅行地圖'),el('h4','',config.title));section.append(heading);
+  const posterUrl=config.src+'?v=poster-5';
+  const layout=el('div','illustrated-map-layout'),figure=el('figure','sketch-paper'),img=el('img'),enlarge=external('',posterUrl,'sketch-image-link');
   enlarge.setAttribute('aria-label','放大手繪地圖：'+config.title);
-  img.src=config.src;img.alt=config.alt;img.loading=printable?'eager':'lazy';img.width=640;img.height=720;
-  enlarge.append(img);figure.append(enlarge,el('figcaption','','旅途中值得停留的風景與味道'));
-  const legend=el('div','sketch-legend');legend.append(el('p','sketch-intro','沿著地圖尋找景點、餐廳與甜點。點開地點可查看實際位置。'));
+  img.src=posterUrl;img.alt=config.alt;img.loading=printable?'eager':'lazy';img.width=800;img.height=1000;
+  enlarge.append(img);figure.append(enlarge,el('figcaption','','沿著路線，收集今天的風景'));
+  const legend=el('div','sketch-legend');legend.append(el('p','sketch-intro','圖上編號對照以下地點，點選可查看實際位置。'));
   const list=el('ol','sketch-places');config.places.forEach(([name,query,description])=>{const item=el('li');const copy=el('span');copy.append(el('strong','',name),el('small','',description));item.append(copy,mapLink('查看地圖',query));list.append(item);});legend.append(list);
-  legend.append(el('p','sketch-caveat',config.note));if(!printable)legend.append(external('放大手繪圖 ↗',config.src,'sketch-zoom'));
+  legend.append(el('p','sketch-caveat',config.note));if(!printable)legend.append(external('放大插畫 ↗',posterUrl,'sketch-zoom'));
   layout.append(figure,legend);section.append(layout);return section;
 }
 function journalPage(i,printable=false){

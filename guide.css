@@ -36,7 +36,7 @@
 .illustrated-map-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(215px,.8fr);gap:27px;align-items:center}
 .sketch-paper{position:relative;margin:0;padding:9px 9px 12px;background:#fffaf0;border:1px solid #d9cdb7;box-shadow:2px 6px 14px #655a3d24;transform:rotate(-1deg);min-width:0}
 .sketch-paper:before{content:'';position:absolute;top:-11px;left:calc(50% - 42px);width:84px;height:22px;background:#c8ad7c8c;transform:rotate(3deg)}
-.sketch-image-link{display:block}.sketch-image-link:focus-visible{outline-offset:3px}.sketch-paper img{display:block;width:100%;height:auto;aspect-ratio:8/9;background:#f4ead7}
+.sketch-image-link{display:block}.sketch-image-link:focus-visible{outline-offset:3px}.sketch-paper img{display:block;width:100%;height:auto;aspect-ratio:4/5;background:#f4ead7}
 .sketch-paper figcaption{text-align:center;color:var(--muted);font:11px/1.5 var(--serif);letter-spacing:1px;margin-top:9px}
 .sketch-legend{min-width:0}.sketch-intro{color:var(--muted);font-size:12px;line-height:1.8;margin:0 0 18px}
 .sketch-places{list-style:none;counter-reset:sketch;margin:0;padding:0}
