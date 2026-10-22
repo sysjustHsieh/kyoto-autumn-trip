@@ -1,6 +1,6 @@
 # 京都秋日｜八日紅葉旅行手帳
 
-專案接續紀錄，更新於 **2026-10-22**。網站：[https://zex00591-lab.github.io/kyoto-autumn-trip/](https://zex00591-lab.github.io/kyoto-autumn-trip/)。原始碼：`https://github.com/zex00591-lab/kyoto-autumn-trip`。目前是直接由 GitHub Pages 發布的靜態網站，沒有安裝或建置步驟。
+專案接續紀錄，更新於 **2026-10-23**。網站：[https://zex00591-lab.github.io/kyoto-autumn-trip/](https://zex00591-lab.github.io/kyoto-autumn-trip/)。原始碼：`https://github.com/zex00591-lab/kyoto-autumn-trip`。目前是直接由 GitHub Pages 發布的靜態網站，沒有安裝或建置步驟。
 
 ## 目前內容
 
@@ -16,6 +16,8 @@
 | 12/6 | 清水寺晨景、御金神社、壽喜燒，留宿京都 | 京蘭 無幻邸 |
 | 12/7 | 京都退房取車 → 勝尾寺 → 神戶三宮、神戶牛與夜景 | remm Plus Kobe Sannomiya |
 | 12/8 | 神戶須磨海洋世界、神戶動物王國、神戶機場返台 | 以機票及租車還車時間為準 |
+
+夜楓點燈小誌已加入「NAKED meets 二條城 2026」作 12/1—12/5 可選夜間光影活動，未排進每日動線。依[二條城官方公告](https://nijo-jocastle.city.kyoto.lg.jp/event/matsuri2026-1/)：活動 10/23—12/5、18:00—22:00、21:00 停止入場；一般成人票週一至四 ¥2,000、週五至日及假日 ¥2,400，夜間與白天分開售票。
 
 頁面還有夜楓點燈小誌、住宿交通備忘、出發清單、每一天的交通與餐食資訊、Google 地圖連結、查核來源，以及可列印的八日版本。每日筆記和出發清單的勾選狀態只存在該瀏覽器的 `localStorage`，不會同步到其他裝置。
 
