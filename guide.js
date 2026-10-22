@@ -1,11 +1,11 @@
 const chapters=[
   {image:'heian.jpg',label:'岡崎・永觀堂',caption:'平安神宮',alt:'平安神宮的秋日景色',memo:'抵達日留點彈性，把夜楓作為第一晚的主角。'},
-  {image:'amanohashidate.jpg',label:'海之京都',caption:'天橋立',alt:'天橋立沙洲與海景',memo:'先確認回程巴士，再決定伊根停留長度。'},
+  {image:'amanohashidate.jpg',label:'海之京都',caption:'天橋立',alt:'天橋立沙洲與海景',memo:'預訂京都 AVANTI 前集合的 KKday 方案，門票與時程以憑證為準。'},
   {image:'tofukuji.jpg',label:'洛南・洛北',caption:'東福寺',alt:'東福寺的秋日紅葉',memo:'把出町柳當作午餐與轉乘的休息站。'},
   {image:'gyoen.jpg',label:'御苑・換宿',caption:'京都御苑',alt:'京都御苑的秋色',memo:'帶行李移宿，先核對京蘭無幻邸的確切棟別。'},
-  {image:'arashiyama.jpg',label:'嵐山水路',caption:'嵐山・渡月橋',alt:'嵐山渡月橋與山色',memo:'小火車、遊船與租車需依預約時間接起來。'},
-  {image:'kiyomizu.jpg',label:'京都到神戶',caption:'清水寺秋色',alt:'清水寺的秋日景色',memo:'清晨遊東山，午餐後再開往神戶。'},
-  {image:'katsuoji.jpg',label:'達摩與港都',caption:'勝尾寺達摩',alt:'勝尾寺的紅色達摩',memo:'留給神戶一個不趕路的夜晚。'},
+  {image:'arashiyama.jpg',label:'嵐山水路',caption:'嵐山・渡月橋',alt:'嵐山渡月橋與山色',memo:'小火車與遊船依預約銜接，傍晚搭車返回京都。'},
+  {image:'kiyomizu.jpg',label:'京都散策',caption:'清水寺秋色',alt:'清水寺的秋日景色',memo:'今天仍住京都，慢慢散策；明早才退房取車。'},
+  {image:'katsuoji.jpg',label:'達摩與港都',caption:'勝尾寺達摩',alt:'勝尾寺的紅色達摩',memo:'從京都出發經勝尾寺直達神戶，抵達後停車放慢步調。'},
   {image:'suma.jpg',label:'神戶返程',caption:'神戶須磨海洋世界',alt:'神戶須磨海洋世界的水族館',memo:'返程日以報到時間為界，前面的活動保留機動。'}
 ];
 const $=id=>document.getElementById(id);
@@ -16,11 +16,11 @@ function detailCard(title,items,cls){const card=el('section','detail-card '+cls)
 const illustratedMaps={
   1:[
     {src:'assets/day2-amanohashidate-town.svg',title:'天橋立・站前散步地圖',alt:'天橋立站前手繪街道圖，以插畫標出車站、View Land、智恩寺和智惠之餅。',places:[
-      ['天橋立站','天橋立駅','抵達與轉乘'],['View Land','天橋立 View Land','吊椅上山看飛龍觀'],['智恩寺','智恩寺 天橋立','沙洲入口旁的寺院'],['智惠之餅','智恩寺 勘七茶屋','當地名物甜點']
+      ['天橋立站','天橋立駅','站前散步地標'],['View Land','天橋立 View Land','吊椅上山看飛龍觀'],['智恩寺','智恩寺 天橋立','沙洲入口旁的寺院'],['智惠之餅','智恩寺 勘七茶屋','當地名物甜點']
     ],note:'站前小區域的手繪示意，步行時間請以實際導航為準。'},
     {src:'assets/day2-ine-harbor.svg',title:'伊根灣・舟屋與海風地圖',alt:'伊根灣手繪海岸圖，標出遊覽船碼頭、舟屋街景及 INE CAFE。',places:[
       ['伊根灣遊覽船','伊根湾めぐり遊覧船','乘船約 25 分鐘'],['舟屋街景','伊根舟屋','沿岸散步'],['INE CAFE','INE CAFE 伊根','週三僅外帶飲料與冰淇淋']
-    ],note:'遊覽船碼頭至 INE CAFE 步行約 25 分鐘；留意 16:00 結束營業與回程巴士。'}
+    ],note:'跟團停留時間以當日安排為準；遊覽船碼頭至 INE CAFE 步行約 25 分鐘，若時間不足可略過。'}
   ],
   4:[
     {src:'assets/day5-arashiyama.svg',title:'嵐山・小火車與保津川',alt:'紅黑色嵯峨野小火車穿過秋日山谷，木造長舟沿保津川而下，渡月橋橫跨河面；附行程能量雷達圖和三則提醒。',places:[
@@ -74,7 +74,7 @@ chapters.forEach((chapter,i)=>{const card=el('button','chapter');card.type='butt
 $('previous-day').addEventListener('click',()=>{if(selected>0){showDay(selected-1);$('journey').scrollIntoView({behavior:'smooth'});}});
 $('next-day').addEventListener('click',()=>{if(selected<7){showDay(selected+1);$('journey').scrollIntoView({behavior:'smooth'});}});
 $('print-guide').addEventListener('click',()=>window.print());
-const pack=[['passport','護照、機票與住宿確認書'],['internet','網路、行動電源與轉接頭'],['clothes','保暖外套、舒適步行鞋'],['money','日圓現金、信用卡與交通卡'],['bookings','列車、遊船、餐廳與租車預約'],['umbrella','雨具與保溫水壺']];
+const pack=[['passport','護照、機票與住宿確認書'],['internet','網路、行動電源與轉接頭'],['clothes','保暖外套、舒適步行鞋'],['money','日圓現金、信用卡與交通卡'],['bookings','KKday 團、嵐山小火車、遊船、餐廳與租車預約'],['umbrella','雨具與保溫水壺']];
 let saved={};try{const v=JSON.parse(localStorage.getItem('kyoto-autumn-packing-v1')||'{}');if(v&&typeof v==='object')saved=v;}catch{$('storage-message').textContent='本機儲存暫時無法使用';}
 for(const [key,title] of pack){const label=el('label','packing'),check=el('input');check.type='checkbox';check.checked=saved[key]===true;check.addEventListener('change',()=>{saved[key]=check.checked;try{localStorage.setItem('kyoto-autumn-packing-v1',JSON.stringify(saved));}catch{$('storage-message').textContent='本機儲存暫時無法使用';}});label.append(check,el('span','',title));$('packing-list').append(label);}
 const credits=[['平安神宮','https://commons.wikimedia.org/wiki/File:%E5%B9%B3%E5%AE%89%E7%A5%9E%E5%AE%AE_01.JPG','Maechan0360','CC BY-SA 3.0','https://creativecommons.org/licenses/by-sa/3.0/'],['天橋立','https://commons.wikimedia.org/wiki/File:Amanohashidate_20211008160710_(51811911021).jpg','inunami','CC BY 2.0','https://creativecommons.org/licenses/by/2.0/'],['東福寺','https://commons.wikimedia.org/wiki/File:Tofukuji_Kyoto01bs3200.jpg','663highland','CC BY 2.5','https://creativecommons.org/licenses/by/2.5/'],['京都御苑','https://commons.wikimedia.org/wiki/File:Various_autumn_trees_at_Kyoto_Gyoen_National_Garden_in_Kyoto,_Japan_(2019)_-_116.jpg','Another Believer','CC BY-SA 4.0','https://creativecommons.org/licenses/by-sa/4.0/'],['嵐山','https://commons.wikimedia.org/wiki/File:Togetsu_bridge_and_Arashiyama_hills_under_the_rain_(Kyoto,_Japan)_(3262583370).jpg','KimonBerlin','CC BY-SA 2.0','https://creativecommons.org/licenses/by-sa/2.0/'],['清水寺','https://commons.wikimedia.org/wiki/File:Kiyomizudera_autumn.jpg','lumoplank','CC0','https://creativecommons.org/publicdomain/zero/1.0/'],['勝尾寺','https://commons.wikimedia.org/wiki/File:Katsuo-ji_daruma.jpg','Chris Gladis','CC BY 2.0','https://creativecommons.org/licenses/by/2.0/'],['神戶須磨海洋世界','https://commons.wikimedia.org/wiki/File:Kobe_Suma_Sea_World_5.jpg','Totti','CC BY-SA 4.0','https://creativecommons.org/licenses/by-sa/4.0/']];
