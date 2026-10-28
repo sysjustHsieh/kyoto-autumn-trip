@@ -56,7 +56,7 @@ function journalPage(i,printable=false){
   const stamp=el('span','date-stamp',day.date);stamp.append(el('small','','2026 KYOTO JOURNAL'));header.append(stamp);page.append(header);
   const lodging=el('p','stay-line','⌂ 住宿｜'+day.stay);page.append(lodging);
   const route=el('div','route-section');route.append(el('p','mini-label','TODAY’S ROUTE / 今日動線'));const steps=el('ol','route-line');day.route.forEach(s=>steps.append(el('li','',s)));route.append(steps);page.append(route);
-  if(!printable)page.append(cameraGuide(i));
+  if(!printable){const cameras=cameraGuide(i);if(cameras)page.append(cameras);}
   if(illustratedMaps[i])illustratedMaps[i].forEach(config=>page.append(illustratedMap(config,printable)));
   const columns=el('div','journal-columns'),timeline=el('div','timeline');
   day.stops.forEach((stop,n)=>{const [time,name,description,query]=stop,card=el('section','stop'+(/交通|巴士|特急|HARUKA|取行李|還車|自駕|租車/.test(name)?' transit':''));card.append(el('span','stop-number',String(n+1)));const content=el('div','stop-content');content.append(el('div','time',time),el('h4','',name),el('p','',description));const links=el('div','map-links');links.append(mapLink('查看地圖',query));content.append(links);card.append(content);timeline.append(card);});columns.append(timeline);
