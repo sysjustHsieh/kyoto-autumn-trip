@@ -58,3 +58,8 @@
 @media(max-width:950px){.weather-places{grid-template-columns:1fr}.weather-place{display:grid;grid-template-columns:145px minmax(0,1fr);gap:0 16px}.weather-place h3{grid-column:1}.weather-now{grid-column:1;align-items:flex-start;gap:5px}.weather-now .weather-illustration{width:55px;height:55px}.weather-current-temp{font-size:25.67px}.weather-days{grid-column:2;grid-row:1/4;margin-top:0}.weather-day{grid-template-columns:68px 36px minmax(0,1fr) auto}.weather-live-label{grid-column:1}}
 @media(max-width:700px){.weather-note{padding:15px 14px;margin-top:16px}.weather-intro{display:block}.weather-intro h2{font-size:21.67px}.weather-intro h2 span{display:inline}.weather-intro>p:last-child{margin-top:5px}.weather-places{gap:9px}.weather-place{display:block;padding:11px 12px}.weather-place h3{margin-bottom:4px}.weather-now{align-items:center;min-height:70px}.weather-now .weather-illustration{width:68px;height:68px}.weather-current-temp{font-size:29.67px}.weather-days{margin-top:8px}.weather-day{grid-template-columns:62px 34px minmax(0,1fr) auto;min-height:45px}.weather-source{margin-top:12px}}
 @media print{.weather-note{display:none}}
+
+.map-links .map{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:7px 12px;font-size:13px;text-align:center}
+.map-directions{background:var(--green);border-color:var(--green);color:var(--white)}
+.map-directions:hover{background:#566442;color:var(--white)}
+@media(max-width:700px){.map-links .map{flex:1 1 145px;min-height:44px}.sketch-places li{grid-template-columns:25px minmax(0,1fr)}.sketch-places .map{grid-column:2;justify-self:start;margin-top:7px;padding:5px 9px;font-size:12px}}

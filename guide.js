@@ -11,7 +11,8 @@ const chapters=[
 const $=id=>document.getElementById(id);
 function el(tag,cls,value){const n=document.createElement(tag);if(cls)n.className=cls;if(value!==undefined)n.textContent=value;return n;}
 function external(label,url,cls=''){const a=el('a',cls,label);a.href=url;a.target='_blank';a.rel='noopener noreferrer';return a;}
-function mapLink(label,query){return external(label+' ↗','https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(query),'map');}
+function mapLink(query){return external('開啟 Google 地圖 ↗','https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(query),'map');}
+function directionsLink(query){return external('從目前位置導航 ↗','https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(query)+'&dir_action=navigate','map map-directions');}
 function detailCard(title,items,cls){const card=el('section','detail-card '+cls);card.append(el('h4','',title));const list=el('ul');items.forEach(item=>list.append(el('li','',item)));card.append(list);return card;}
 const illustratedMaps={
   1:[
@@ -45,7 +46,7 @@ function illustratedMap(config,printable){
   img.src=posterUrl;img.alt=config.alt;img.loading=printable?'eager':'lazy';img.width=800;img.height=1000;
   enlarge.append(img);figure.append(enlarge,el('figcaption','','沿著路線，收集今天的風景'));
   const legend=el('div','sketch-legend');legend.append(el('p','sketch-intro','圖上編號對照以下地點，點選可查看實際位置。'));
-  const list=el('ol','sketch-places');config.places.forEach(([name,query,description])=>{const item=el('li');const copy=el('span');copy.append(el('strong','',name),el('small','',description));item.append(copy,mapLink('查看地圖',query));list.append(item);});legend.append(list);
+  const list=el('ol','sketch-places');config.places.forEach(([name,query,description])=>{const item=el('li');const copy=el('span');copy.append(el('strong','',name),el('small','',description));item.append(copy,mapLink(query));list.append(item);});legend.append(list);
   legend.append(el('p','sketch-caveat',config.note));if(!printable)legend.append(external('放大插畫 ↗',posterUrl,'sketch-zoom'));
   layout.append(figure,legend);section.append(layout);return section;
 }
@@ -59,7 +60,7 @@ function journalPage(i,printable=false){
   if(!printable){const cameras=cameraGuide(i);if(cameras)page.append(cameras);}
   if(illustratedMaps[i])illustratedMaps[i].forEach(config=>page.append(illustratedMap(config,printable)));
   const columns=el('div','journal-columns'),timeline=el('div','timeline');
-  day.stops.forEach((stop,n)=>{const [time,name,description,query]=stop,card=el('section','stop'+(/交通|巴士|特急|HARUKA|取行李|還車|自駕|租車/.test(name)?' transit':''));card.append(el('span','stop-number',String(n+1)));const content=el('div','stop-content');content.append(el('div','time',time),el('h4','',name),el('p','',description));const links=el('div','map-links');links.append(mapLink('查看地圖',query));content.append(links);card.append(content);timeline.append(card);});columns.append(timeline);
+  day.stops.forEach((stop,n)=>{const [time,name,description,query]=stop,card=el('section','stop'+(/交通|巴士|特急|HARUKA|取行李|還車|自駕|租車/.test(name)?' transit':''));card.append(el('span','stop-number',String(n+1)));const content=el('div','stop-content');content.append(el('div','time',time),el('h4','',name),el('p','',description));const links=el('div','map-links');links.append(mapLink(query),directionsLink(query));content.append(links);card.append(content);timeline.append(card);});columns.append(timeline);
   const side=el('aside','scrapbook'),photo=el('figure','photo-frame'),img=el('img');img.src='assets/'+chapter.image;img.alt=chapter.alt;img.loading=printable?'eager':'lazy';photo.append(img,el('figcaption','',chapter.caption));side.append(photo);
   const memo=el('div','memo-card');memo.append(el('h4','','旅途小筆記'),el('p','',chapter.memo));side.append(memo);
   const tip=el('div','memo-card');tip.append(el('h4','','出發前提醒'),el('p','',day.tip));side.append(tip);columns.append(side);page.append(columns);
