@@ -8,7 +8,7 @@
 
 每日行程的「今日動線」下方有「景點周邊鏡頭」。2026-10-28 重新核對影像來源：YouTube 直播直接連到 YouTube；天橋立 View Land 使用官方非 YouTube 播放頁。只保留景點同點或確實鄰近的鏡頭，並說明實際畫面範圍。伊根、東福寺、出町柳、詩仙堂／圓光寺、京都御苑、鴨川午餐、勝尾寺、神戶三宮及須磨海洋世界等站點，若沒有可核實且可開啟的近距離直播鏡頭，就不顯示監控卡片；12/3 因此不顯示整個鏡頭區塊。京都府河川防災頁此次檢查回應 403，已移除原連結。直播 ID 和狀態可能變動，開啟後仍應查看來源頁的畫面時間。網站只提供連結，不複製或嵌入第三方影像。資料與卡片渲染在 `cameras.js`，由 `guide.js` 在每日路線下方插入；列印版隱藏此互動區塊。
 
-專案接續紀錄，更新於 **2026-10-28**。網站：[https://zex00591-lab.github.io/kyoto-autumn-trip/](https://zex00591-lab.github.io/kyoto-autumn-trip/)。原始碼：`https://github.com/zex00591-lab/kyoto-autumn-trip`。目前是直接由 GitHub Pages 發布的靜態網站，沒有安裝或建置步驟。
+專案接續紀錄，更新於 **2026-10-28**。網站：[https://sysjusthsieh.github.io/kyoto-autumn-trip/](https://sysjusthsieh.github.io/kyoto-autumn-trip/)。原始碼：`https://github.com/sysjustHsieh/kyoto-autumn-trip`。目前是直接由 GitHub Pages 發布的靜態網站，沒有安裝或建置步驟。
 
 ## 目前內容
 
