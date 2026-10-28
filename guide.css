@@ -63,3 +63,7 @@
 .map-directions{background:var(--green);border-color:var(--green);color:var(--white)}
 .map-directions:hover{background:#566442;color:var(--white)}
 @media(max-width:700px){.map-links .map{flex:1 1 145px;min-height:44px}.sketch-places li{grid-template-columns:25px minmax(0,1fr)}.sketch-places .map{grid-column:2;justify-self:start;margin-top:7px;padding:5px 9px;font-size:12px}}
+.map-debug{align-items:center;gap:10px;margin:-8px 0 18px;padding:10px 12px;background:#eff2e8;border-left:3px solid var(--green)}
+.map-debug span{font-size:13px;color:var(--green)}
+.map-debug .map{flex:0 1 auto}
+@media print{.map-debug{display:none}}
