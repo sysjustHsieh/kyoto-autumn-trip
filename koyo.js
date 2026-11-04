@@ -10,6 +10,18 @@ function koyoShortDate(iso) {
   return `${Number(iso.slice(5, 7))}/${Number(iso.slice(8, 10))}`;
 }
 
+function koyoTripStatus(forecast, tripStart, tripEnd) {
+  const day = 24 * 60 * 60 * 1000;
+  const predicted = Date.parse(String(forecast).slice(0, 10));
+  const start = Date.parse(tripStart);
+  const end = Date.parse(tripEnd);
+  if (![predicted, start, end].every(Number.isFinite)) return null;
+  if (predicted > end + 7 * day) return { color: 'green', label: '行程時間偏早' };
+  if (predicted > end) return { color: 'yellow', label: '接近預測楓紅日' };
+  if (predicted >= start - 7 * day) return { color: 'red', label: '行程在楓紅日附近' };
+  return { color: 'past', label: '預測楓紅日已過' };
+}
+
 function readKoyoCache() {
   try {
     const cached = JSON.parse(localStorage.getItem(koyoCacheKey));
@@ -29,7 +41,11 @@ function renderKoyo(data, cached = false) {
     const city = cities.find(item => item.nameEn === card.dataset.koyoCity);
     const forecast = currentSeason ? city?.maple?.forecast : null;
     const date = koyoShortDate(forecast);
+    const status = date ? koyoTripStatus(forecast, card.dataset.tripStart, card.dataset.tripEnd) : null;
+    card.classList.remove('koyo-green', 'koyo-yellow', 'koyo-red', 'koyo-past');
+    if (status) card.classList.add(`koyo-${status.color}`);
     card.querySelector('.koyo-date').textContent = date ? `${date} 預測楓紅` : '尚無本季預測';
+    card.querySelector('.koyo-status').textContent = status?.label || '尚無可判讀狀態';
     const difference = city?.maple?.normalDiffDays;
     card.querySelector('.koyo-detail').textContent = date && Number.isFinite(difference)
       ? difference > 0 ? `較平年晚約 ${difference} 天` : difference < 0 ? `較平年早約 ${Math.abs(difference)} 天` : '約與平年相同'
@@ -63,7 +79,7 @@ async function updateKoyo() {
     } catch {
       if (cached) renderKoyo(cached.data, true);
       else document.getElementById('koyo-update').textContent = '預測暫時無法讀取';
-      if (!cached) document.querySelectorAll('.koyo-detail').forEach(item => { item.textContent = '請點下方資料來源查看'; });
+      if (!cached) document.querySelectorAll('.koyo-status').forEach(item => { item.textContent = '請點下方資料來源查看'; });
     }
   })();
   try { await koyoPending; } finally { koyoPending = null; }
